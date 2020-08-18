@@ -15,4 +15,14 @@ public class CalculateTest {
         calc = new Multiply();
         assertEquals(Math.round(calc.execute(1,2)), 2);
     }
+
+    @Test
+    public void calculateLambdaSuccess(){
+
+        Calculate calc = (x, y) -> x + y;
+        assertEquals(Math.round(calc.execute(1,2)), 3);
+
+        calc = (x, y) -> x * y;
+        assertEquals(Math.round(calc.execute(1,2)), 2);
+    }
 }
