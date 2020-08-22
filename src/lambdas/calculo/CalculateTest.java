@@ -2,6 +2,10 @@ package lambdas.calculo;
 
 import org.junit.Test;
 
+import java.util.Optional;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -45,4 +49,17 @@ public class CalculateTest {
         assertEquals(calc.legal(), "legal");
     }
 
+    @Test
+    public void testBinaryOperator(){
+        BinaryOperator<Integer> calc = (x, y) -> x + y;
+        assertEquals(Optional.ofNullable(calc.apply(3, 2)), Optional.of(5));
+
+    }
+
+    @Test
+    public void testBiFunction(){
+        BiFunction<Integer, Double, String> calc = (x ,y ) -> String.valueOf(x * y);
+        System.out.println(calc.apply(2,1.5));
+
+    }
 }
