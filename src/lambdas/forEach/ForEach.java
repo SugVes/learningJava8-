@@ -13,10 +13,6 @@ public class ForEach {
         aprovados.forEach(nome -> System.out.println(nome));
 
         AtomicInteger contador = new AtomicInteger(1);
-//        aprovados.forEach(nome -> {
-//            System.out.println("Nome:" + contador + " " + nome);
-//            contador.getAndIncrement();
-//        });
 
         System.out.println("\nLambda com contador");
         aprovados.forEach(x -> System.out.println("Name "+contador.getAndIncrement()+": "+x));

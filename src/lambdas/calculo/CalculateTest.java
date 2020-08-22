@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
+import java.util.function.Predicate;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -61,5 +62,11 @@ public class CalculateTest {
         BiFunction<Integer, Double, String> calc = (x ,y ) -> String.valueOf(x * y);
         System.out.println(calc.apply(2,1.5));
 
+    }
+
+    @Test
+    public void testPredicate(){
+        Predicate<Double> calc = x -> x > 12.0;
+        assertEquals(calc.test(5.0),false);
     }
 }
