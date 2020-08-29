@@ -2,8 +2,13 @@ package lambdas.challengBinaryOperator;
 
 import lambdas.model.Product;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
 
 public class DesafioBinaryOperator {
     public static void main(String[] args) {
@@ -15,7 +20,8 @@ public class DesafioBinaryOperator {
         Function<Double, String> ceil = n -> String.format("%.2f",n);
         UnaryOperator<String> formatFinal = n -> "R$"+n;
 
-
+        getProducts().stream().map(Product::getName).forEach(System.out::println);
+        
 
         //520.1835
 
@@ -27,4 +33,11 @@ public class DesafioBinaryOperator {
                     .andThen(formatFinal)
                     .apply(p));
     }
+
+    public static List<Product> getProducts(){
+        Product p1 = new Product("p1",13.4,0.23);
+        Product p2 = new Product("p2",166.4,0.12);
+        Product p3 = new Product("p3",563.4,0.56);
+        return asList(p1,p2,p3);
+    };
 }
