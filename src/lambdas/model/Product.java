@@ -5,12 +5,21 @@ public class Product {
     private double price;
     private double discount;
     private Supplier supplier;
+    private boolean freigth;
 
     public Product(String name, double price, double discount, Supplier supplier) {
         this.name = name;
         this.price = price;
         this.discount = discount;
         this.supplier = supplier;
+    }
+
+    public boolean isFreigth() {
+        return freigth;
+    }
+
+    public void setFreigth(boolean freigth) {
+        this.freigth = freigth;
     }
 
     public String getName() {
