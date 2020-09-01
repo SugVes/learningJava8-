@@ -4,11 +4,13 @@ public class Product {
     private String name;
     private double price;
     private double discount;
+    private Supplier supplier;
 
-    public Product(String name, double price, double discount) {
+    public Product(String name, double price, double discount, Supplier supplier) {
         this.name = name;
         this.price = price;
         this.discount = discount;
+        this.supplier = supplier;
     }
 
     public String getName() {
@@ -35,12 +37,21 @@ public class Product {
         this.discount = discount;
     }
 
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", discount=" + discount +
+                ", supplier=" + supplier +
                 '}';
     }
 }
