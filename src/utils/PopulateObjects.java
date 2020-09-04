@@ -23,6 +23,6 @@ public class PopulateObjects {
         p2.setFreigth(false);
         p3.setFreigth(true);
         return asList(p,p1,p2,p3);
-    };
+    }
 }
 
